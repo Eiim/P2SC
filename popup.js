@@ -5,7 +5,7 @@
 'use strict';
 
 try {
-	chrome.storage.sync.get('P2SCData', function(data){});
+	chrome.storage.sync.get('profile1', function(data){});
 } catch (Error e) {
 	window.location.replace("nameInput.html");
 }

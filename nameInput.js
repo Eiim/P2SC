@@ -8,8 +8,11 @@ let begin = document.getElemenytById("begin");
 
 begin.onclick = function(button) {
 	if(nameInput.value.length > 0) {
-		
+		window.alert("Please enter a name!");
 	} else {
-		
+		let newProfile = {};
+		newProfile["profile_name"] = nameInput.value;
+		chrome.storage.sync.set({'profile1' : newProfile});
+    window.location.href("popup.html");
 	}
 }

@@ -1,4 +1,12 @@
-[{profile_name: "Eiim",
+//Space is reserved for 16 profiles and the following 13 modes:
+// "paper1_classic", "paper1_small", paper1_fastspeed", "paper1_turbo", "paper1_smallmapfastspeed", "paper1_slowspeed", "paper1_invertedcontrols"
+// "paper2_classic"
+// "lab_classic", "lab_egypt"
+// "agar_classic"
+// "mini_papervsblocks", "mini_xmas"
+//with space for up to 19 more.
+
+{profile_name: "Eiim",
 	modes: [{
 		mode_name: "Paper.io 2",
 		t_kills: 12,
@@ -14,6 +22,4 @@
 	},
 	...
 	}]
-},
-...
-}]
+}
