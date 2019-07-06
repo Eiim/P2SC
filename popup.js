@@ -5,23 +5,23 @@
 'use strict';
 
 try {
-  chrome.storage.sync.get('P2SCData', function(data){});
+	chrome.storage.sync.get('P2SCData', function(data){});
 } catch (Error e) {
-  window.location.replace("nameInput.html");
+	window.location.replace("nameInput.html");
 }
 
 let changeColor = document.getElementById('changeColor');
 
 chrome.storage.sync.get('color', function(data) {
-  changeColor.style.backgroundColor = data.color;
-  changeColor.setAttribute('value', data.color);
+	changeColor.style.backgroundColor = data.color;
+	changeColor.setAttribute('value', data.color);
 });
 
 changeColor.onclick = function(element) {
-  let color = element.target.value;
-  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-    chrome.tabs.executeScript(
-        tabs[0].id,
-        {code: 'document.body.style.backgroundColor = "' + color + '";'});
-  });
+	let color = element.target.value;
+	chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+		chrome.tabs.executeScript(
+			tabs[0].id,
+			{code: 'document.body.style.backgroundColor = "' + color + '";'});
+	});
 };

@@ -7,5 +7,9 @@ let nameInput = document.getElementById("nameInput");
 let begin = document.getElemenytById("begin");
 
 begin.onclick = function(button) {
-
+	if(nameInput.value.length > 0) {
+		
+	} else {
+		
+	}
 }
