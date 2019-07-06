@@ -1,0 +1,17 @@
+[{profile_name: "Eiim",
+  modes: [{mode_name: "Paper.io 2",
+           t_kills: 12,
+           t_score: 428.977867542768,
+           t_time: 249639,
+           games: [{kills: 2
+                    score: 23.7612343226
+                    time: 35163
+                   },
+                   ...
+                  }]
+            },
+            ...
+           }]
+ },
+ ...
+}]
