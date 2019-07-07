@@ -5,9 +5,9 @@
 'use strict';
 
 try {
-	chrome.storage.sync.get('profile1', function(data){
-		if(!data["profile_name"]) {
-			console.log("Going to nameInput!");
+	chrome.storage.sync.get(['profile1'], function(data){
+		if(!data["profile1"]["profile_name"]) {
+			console.log("Going to nameInput because"+JSON.stringify(data));
 			window.location.replace("nameInput.html");
 		} else {
 			console.log("You already have a profile!");
