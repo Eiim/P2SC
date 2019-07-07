@@ -5,8 +5,16 @@
 'use strict';
 
 try {
-	chrome.storage.sync.get('profile1', function(data){});
-} catch (Error e) {
+	chrome.storage.sync.get('profile1', function(data){
+		if(!data["profile_name"]) {
+			console.log("Going to nameInput!");
+			window.location.replace("nameInput.html");
+		} else {
+			console.log("You already have a profile!");
+		}
+	});
+} catch (e) {
+	console.log("Going to nameInput!");
 	window.location.replace("nameInput.html");
 }
 

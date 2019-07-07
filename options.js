@@ -18,6 +18,9 @@ function constructOptions(kButtonColors) {
     });
     a.appendChild(button);
     page.appendChild(a);
+		chrome.storage.sync.get(['profile1'], function(result) {
+			document.getElementById("name").textContent = JSON.stringify(result);
+		});
   }
 }
 constructOptions(kButtonColors);
