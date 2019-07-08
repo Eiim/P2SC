@@ -6,7 +6,8 @@
 // "mini_papervsblocks", "mini_xmas"
 //with space for up to 19 more.
 
-{profile_name: "Eiim",
+{data_format: 3;
+	profile_name: "Eiim",
 	modes: [{
 		mode_name: "Paper.io 2",
 		t_kills: 12,

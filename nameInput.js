@@ -12,6 +12,7 @@ begin.onclick = function(button) {
 	} else {
 		let newProfile = {};
 		newProfile["profile_name"] = nameInput.value;
+		newProfile["data_format"] = 3;
 		chrome.storage.sync.set({'profile1' : newProfile});
     window.location.href = "popup.html";
 	}
