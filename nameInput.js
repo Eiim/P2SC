@@ -6,8 +6,8 @@
 let nameInput = document.getElementById("nameInput");
 let begin = document.getElementById("begin");
 
-begin.onclick = function(button) {
-	if(nameInput.value.length == 0) {
+begin.onclick = function() {
+	if(nameInput.value.length === 0) {
 		window.alert("Please enter a name!");
 	} else {
 		let newProfile = {};

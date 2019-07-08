@@ -14,8 +14,18 @@ try {
 		}
 	});
 } catch (e) {
-	console.log("Going to nameInput!");
+	console.log("Going to nameInput due to error!");
 	window.location.replace("nameInput.html");
+}
+
+// "Constants" for dropdown option creation
+let profileDrop = document.getElementById("profileDropdown");
+let gameDrop = document.getElementById("gameDropdown");
+let profNums = new Array(16);
+const gameIDs = ["paper1_classic", "paper1_small", "paper1_fastspeed", "paper1_turbo", "paper1_smallmapfastspeed", "paper1_slowspeed", "paper1_invertedcontrols", "paper2_classic", "lab_classic", "lab_egypt", "agar_classic", "mini_papervsblocks", "mini_xmas"];
+const gameNames = ["Paper.io Classic", "Paper.io Small map", "Paper.io Fast speed", "Paper.io Turbo", "Paper.io Small map + fast speed", "Paper.io Slow speed", "Paper.io Inverted controls", "Paper.io 2", "Classic Labyrinth", "Egypt Labyrinth", "Agarpaper", "Paper vs. Blocks", "Christmas"];
+for(var i = 0; i < 16; i++) {
+	profNums[i] = i+1;
 }
 
 // Helper function for profile option creation
@@ -32,16 +42,6 @@ function makeProfOpt(ignore, index) {
 			profileDrop.appendChild(opt);
 		}
 	});
-}
-
-// "Constants" for dropdown option creation
-let profileDrop = document.getElementById("profileDropdown");
-let gameDrop = document.getElementById("gameDropdown");
-let profNums = new Array(16);
-const gameIDs = ["paper1_classic", "paper1_small", "paper1_fastspeed", "paper1_turbo", "paper1_smallmapfastspeed", "paper1_slowspeed", "paper1_invertedcontrols", "paper2_classic", "lab_classic", "lab_egypt", "agar_classic", "mini_papervsblocks", "mini_xmas"];
-const gameNames = ["Paper.io Classic", "Paper.io Small map", "Paper.io Fast speed", "Paper.io Turbo", "Paper.io Small map + fast speed", "Paper.io Slow speed", "Paper.io Inverted controls", "Paper.io 2", "Classic Labyrinth", "Egypt Labyrinth", "Agarpaper", "Paper vs. Blocks", "Christmas"];
-for(var i = 0; i < 16; i++) {
-	profNums[i] = i+1;
 }
 
 // Create gamemode dropdown options
