@@ -7,7 +7,7 @@ var rule = {
 	conditions: [new chrome.declarativeContent.PageStateMatcher({
 		pageUrl: {hostEquals: 'paper-io.com'},
 	})],
-	actions: [new chrome.declarativeContent.ShowPageAction()];
+	actions: [new chrome.declarativeContent.ShowPageAction()]
 };
 
 chrome.runtime.onInstalled.addListener(function() {
