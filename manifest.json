@@ -1,16 +1,16 @@
 {
 	"name": "Paper.io 2 Stats Counter",
-	"version": "0.1",
+	"version": "0.1.1",
 	"description": "Gathers statistics about your Paper.io 2 play.",
 	"permissions": ["activeTab", "declarativeContent", "storage"],
 	"options_page": "options.html",
 	"background": {
-		"scripts": ["background.js"],
+		"scripts": ["background.js", "listener.js"],
 		"persistent": false
 	},
 	"content_scripts": [{
 		"matches": ["*://paper-io.com/*"],
-		"js": ["object-watch.js", "recorder.js"]
+		"js": ["recorder.js"]
   }],
 	"page_action": {
 		"default_popup": "popup.html",

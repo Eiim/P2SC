@@ -1,8 +1,8 @@
-console.log("Setting the watch!");
-
-document.getElementById("game_over").style.watch("display", function(ignore, oldVal, newVal) {
-	console.log(ignore+" updated from "+oldVal+" to "+newVal);
-	if(newVal === "block") {
+var callback = function(mutations, observer) {
+	// Checking for falsey mutation value to short-circuit and prevent errors
+	// I'm sure there will never be more than one attribute mutation at a time, right? 
+	if(mutations[0] && mutations[0].oldValue === "display: none;") {
+		// Game is now over
 		console.log("Recording data!");
 		switch(game_mode) {
 			case "paper2_classic":
@@ -23,4 +23,10 @@ document.getElementById("game_over").style.watch("display", function(ignore, old
 				console.log("Tried to record unknown game mode!");
 		}
 	}
-});
+};
+
+var observer = new MutationObserver(callback);
+
+observer.observe(document.getElementById("game_over"), {attributes: true, attributeOldValue: true});
+
+console.log("Done setting the observer @ "+(new Date).getTime());
