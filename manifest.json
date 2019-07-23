@@ -1,6 +1,6 @@
 {
 	"name": "Paper.io 2 Stats Counter",
-	"version": "0.1",
+	"version": "0.1.1",
 	"description": "Gathers statistics about your Paper.io 2 play.",
 	"permissions": ["activeTab", "declarativeContent", "storage"],
 	"options_page": "options.html",
@@ -8,20 +8,26 @@
 		"scripts": ["background.js"],
 		"persistent": false
 	},
+	"content_scripts": [{
+		"matches": ["*://paper-io.com/*"],
+		"js": ["recorder.js"]
+  }],
 	"page_action": {
 		"default_popup": "popup.html",
 		"default_icon": {
-			"16": "images/P2SCLogo16x.png",
-			"32": "images/P2SCLogo32x.png",
-			"48": "images/P2SCLogo48x.png",
-			"128": "images/P2SCLogo128x.png"
+			"16": "images/P2SCLogoTransparent16x.png",
+			"32": "images/P2SCLogoTransparent32x.png",
+			"48": "images/P2SCLogoTransparent48x.png",
+			"64": "images/P2SCLogoTransparent64x.png",
+			"128": "images/P2SCLogoTransparent128x.png"
 		}
 	},
 	"icons": {
-		"16": "images/P2SCLogo16x.png",
-		"32": "images/P2SCLogo32x.png",
-		"48": "images/P2SCLogo48x.png",
-		"128": "images/P2SCLogo128x.png"
+		"16": "images/P2SCLogoTransparent16x.png",
+		"32": "images/P2SCLogoTransparent32x.png",
+		"48": "images/P2SCLogoTransparent48x.png",
+		"64": "images/P2SCLogoTransparent64x.png",
+		"128": "images/P2SCLogoTransparent128x.png"
 	},
 	"manifest_version": 2
 }
