@@ -15,3 +15,18 @@ chrome.runtime.onInstalled.addListener(function() {
 		chrome.declarativeContent.onPageChanged.addRules([rule]);
 	});
 });
+
+chrome.runtime.onMessage.addListener(
+	function(data, sender, sendResponse) {
+		var response = "";
+		switch(data.mode) {
+			case "paper2_classic":
+				response = "Rate: "+data.score/data.time+"%/s";
+				break;
+			default:
+				response = "Unknown game mode recieved!";
+		}
+		// TODO: See TODO in recorder.js
+		sendResponse(response);
+	}
+);
