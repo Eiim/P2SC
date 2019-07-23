@@ -5,19 +5,25 @@ var callback = function(mutations, observer) {
 		
 		// Game is now over
 		console.log("Recording data!");
+		var data = {};
 		switch(document.getElementsByClassName("c")[0].textContent) {
 			case "Paper.io 2":
 				var timeArray = document.getElementsByClassName("da_pt")[0].textContent.split(":");
-				chrome.runtime.sendMessage({
+				data = {
 					mode: "paper2_classic",
 					kills: parseInt(document.getElementsByClassName("da_pk")[0].textContent),
 					score: parseFloat(document.getElementsByClassName("da_sc")[0].textContent),
 					time: timeArray[0]*60+parseInt(timeArray[1])
-				}, function(response) {console.log(response);});
-				// TODO: add response to add a nice message to the page, eg: "That was a great game!" or "Average score: 11.25%".
+				};
 				break;
 			default:
-				console.log("Tried to record unknown game mode "+window.game_mode);
+				console.log("Tried to record unknown game mode "+document.getElementsByClassName("c")[0].textContent);
+		}
+		if(data.mode) {
+			chrome.runtime.sendMessage(data, function(response) {
+				// TODO: add response to add a nice message to the page, eg: "That was a great game!" or "Average score: 11.25%".
+				console.log(response);
+			});
 		}
 	}
 };
